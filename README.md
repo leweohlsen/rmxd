@@ -25,3 +25,5 @@ pip install billboard.py
 
 ``` python rmxd.py```
 
+* rmxd is now running on localhost:5000
+
