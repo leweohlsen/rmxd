@@ -15,5 +15,9 @@ Consequently, please use rmxd for personal purposes only.
 
 Make sure you have Python and Flask installed
 
+``` pip install soundcloud ```
+
+``` pip install billboard.py ```
+
 ``` python rmxd.py```
 
