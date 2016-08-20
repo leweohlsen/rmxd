@@ -21,6 +21,8 @@ pip install soundcloud
 pip install billboard.py 
 ```
 
+* paste your soundcloud api key into rmxd.py
+
 * launch rmxd
 
 ``` python rmxd.py```
