@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>rmxd</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="http://w.soundcloud.com/player/api.js"></script>
+    <script src="{{url_for('static', filename='player.js')}}"></script>
+
+</head>
+
+<body>
+  <div class="wrapall">
+    <img src="http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG" class="background-artwork">
+      <div id="wrap" class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Home</a>
+                    </li>
+                    <li role="presentation"><a href="#">Sign In</a>
+                    </li>
+                    <li role="presentation"><a href="showSignUp">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+            <h1 class="logotext">rmxd</h1>
+            <button>Play / Pause</button>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="panel-group" id="accordion">
+              {% for track in tracks %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" id="track{{track.rank}}" class="track collapsed" href="#remixes{{track.rank}}">
+                            <span class="rank">{{ track.rank }}</span> {{ track.toString() }}
+                          </a>
+                        </h4>
+                    </div>
+                    <div id="remixes{{track.rank}}" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          {% for remix in track.remixes %}
+                            <div class="remix" data-uri="{{remix.uri}}" data-img="{{remix.artwork_url}}" data-plays="{{remix.playback_count}}" data-likes="{{remix.likes_count}}">
+                              {{remix.title}} <span class="plike-quota"></span>
+                            </div>
+                          {% else %}
+                            <p>No remixes here.</p>
+                          {% endfor %}
+                        </div>
+                    </div>
+                </div>
+              {% else %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                            Nothing here!
+                          </a>
+                        </h4>
+                    </div>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <footer class="footer navbar-fixed-bottom">
+      <div class="container">
+        <iframe id="soundcloud_widget"
+            src="https://w.soundcloud.com/player/?url=https://soundcloud.com/thrilljockey/the-sea-and-cake-harps"
+            width="100%"
+            height="150"
+            scrolling="no"
+            frameborder="no"></iframe>
+      </div>
+    </footer>
+</body>
+
+</html>
