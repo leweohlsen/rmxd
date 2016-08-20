@@ -1,6 +1,6 @@
 # rmxd
 
-![rmxd screenshot](http://leweohlsen.de/rmxd/rmxd.jpg)
+<img src="http://leweohlsen.de/rmxd/rmxd.jpg" width:400px>
 
 ## What's rmxd?
 rmxd uses the SoundCloud API and guoguo12's [billboard.py](https://github.com/guoguo12/billboard-charts) to give you the best remixes from any of the [Billboard Chart Lists](http://www.billboard.com/charts). It's build with Python, Flask and Bootstrap.
