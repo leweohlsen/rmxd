@@ -16,8 +16,10 @@ Consequently, please use rmxd for personal purposes only.
 * make sure you have Python and Flask installed
 * install SoundCloud and Billboard API
 
-``` pip install soundcloud ```
-``` pip install billboard.py ```
+``` 
+pip install soundcloud
+pip install billboard.py 
+```
 
 * launch rmxd
 
